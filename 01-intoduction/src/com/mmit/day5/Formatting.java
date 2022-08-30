@@ -44,6 +44,8 @@ public class Formatting {
 		System.out.println("format3: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
 		System.out.println("format4: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
 		
+		System.out.println();
+		
 		
 	}
 }
