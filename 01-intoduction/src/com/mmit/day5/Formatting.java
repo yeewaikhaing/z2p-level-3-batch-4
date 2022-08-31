@@ -8,6 +8,7 @@ import java.time.format.FormatStyle;
 
 public class Formatting {
 
+	
 	public static void main(String[] args) {
 		//1. predefined constants
 		
@@ -20,7 +21,7 @@ public class Formatting {
 		LocalTime time = LocalTime.now();
 		LocalDateTime dateTime = LocalDateTime.now();
 		
-		System.out.println("Default date: " + date);
+		//System.out.println("Default date: " + date);
 		//System.out.println("ISO format: " + date.format(f1));
 		//System.out.println("ISO format: " + f1.format(date));
 		
@@ -29,21 +30,30 @@ public class Formatting {
 		DateTimeFormatter f5 = DateTimeFormatter.ofPattern("h-mm-ss a");
 		DateTimeFormatter f6 = DateTimeFormatter.ofPattern("MMMM dd yyyy 'at' h:m:s a");
 		//System.out.println("Format1: " + date.format(f4));
-		System.out.println("Default: " + time);
-		System.out.println("Format: " + time.format(f5));
-		
-		System.out.println("Default: " + dateTime);
-		System.out.println("format: " + dateTime.format(f6));
+//		System.out.println("Default: " + time);
+//		System.out.println("Format: " + time.format(f5));
+//		
+//		System.out.println("Default: " + dateTime);
+//		System.out.println("format: " + dateTime.format(f6));
 		
 		//3. Localize style
 		DateTimeFormatter f7 = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+		DateTimeFormatter f8 = DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM);
 		
-		System.out.println("Default: " + date);
-		System.out.println("format1 : " + date.format(f7));
-		System.out.println("format2: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
-		System.out.println("format3: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
-		System.out.println("format4: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
-		
+		String output = time.format(f8);
+		System.out.println("Default: " + time);
+		System.out.println("Format1: " + output);
+		System.out.println("Format2: " + time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
+		System.out.println("--------------");
+		System.out.println("Default: " + dateTime);
+		System.out.println("Format1: " + dateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
+		System.out.println("Format2: " + dateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)));
+		//		System.out.println("Default: " + date);
+//		System.out.println("format1 : " + date.format(f7));
+//		System.out.println("format2: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
+//		System.out.println("format3: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
+//		System.out.println("format4: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
+//		
 		System.out.println();
 		
 		
