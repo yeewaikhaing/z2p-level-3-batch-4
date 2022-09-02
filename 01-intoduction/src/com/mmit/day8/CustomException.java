@@ -2,6 +2,24 @@ package com.mmit.day8;
 
 import java.util.Scanner;
 
+class Assignment1 {
+	int[] array;
+	
+	public Assignment1(String[] data) {
+		// {}
+		// convert each item in data array to int type and assign int[]
+		
+		//find total
+		
+		// find max
+		
+		// find min
+		
+		// find avg
+		
+		//display output
+	}
+}
 class InvalidAgeException  extends Exception{
 
 	private static final long serialVersionUID = 1L;
