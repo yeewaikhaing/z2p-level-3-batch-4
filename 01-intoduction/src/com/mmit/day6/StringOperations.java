@@ -53,5 +53,10 @@ public class StringOperations {
 			System.out.println(v);
 		String[] array = s2.split(" ");
 		System.out.println("No of words: " + array);
+		
+		// convert from any data type to string
+		tmp = String.valueOf(output);
+		System.out.println("tmp = " + tmp);
+		System.out.println(String.valueOf(true));
 	}
 }
