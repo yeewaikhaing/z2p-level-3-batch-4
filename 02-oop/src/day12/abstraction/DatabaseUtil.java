@@ -13,5 +13,5 @@ public abstract class DatabaseUtil {
 	public abstract boolean delete(int id);
 	public abstract Object findById(int id);
 	
-	public abstract boolean deleteAll();
+	//public abstract boolean deleteAll();
 }
