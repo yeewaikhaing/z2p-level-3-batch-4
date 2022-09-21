@@ -1,6 +1,7 @@
 package day14;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class List_Testing_3 {
 
@@ -28,6 +29,8 @@ public class List_Testing_3 {
 		
 		Phone obj = list.get(0);
 		System.out.println(obj);
+		
+		//Iterator<String> list;
 	}
 }
 
