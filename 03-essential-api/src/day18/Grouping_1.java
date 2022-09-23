@@ -69,7 +69,7 @@ public class Grouping_1 {
 							 
 							 )
 					 ));
-	 
+	 /// cache vs buffer
 	 System.out.println("Emplyee name in the same city: " + nameListByCity);
 	 
 	 // employees who stay in the city
