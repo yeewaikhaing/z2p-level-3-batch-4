@@ -13,7 +13,7 @@ public class Writing_2 {
 			writer.write("\n Level 3");
 			writer.newLine();
 			writer.write("Leve 2");
-			writer.flush();
+			writer.close();
 			writer.write("Level 1");
 			System.out.println("Saved");
 		}
