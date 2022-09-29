@@ -33,7 +33,7 @@ public class Testing_2 {
 				pst.addBatch();
 				
 			}
-			
+			// awt.*/ swing.*/ javafx.* (html) <tag>(.fxml) MVC format (Model/View/Controller)
 			pst.executeBatch();
 			System.out.println("save....");
 			
