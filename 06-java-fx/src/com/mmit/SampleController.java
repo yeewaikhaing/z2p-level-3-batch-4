@@ -1,9 +1,15 @@
 package com.mmit;
 
+import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -12,14 +18,15 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.MouseEvent;
 
-public class SampleController {
+public class SampleController implements Initializable{
 	
 	@FXML
     private TextArea area_address;
 
     @FXML
-    private ComboBox<?> cbo_position;
+    private ComboBox<String> cbo_position;
 
     @FXML
     private CheckBox chk_java;
@@ -44,6 +51,8 @@ public class SampleController {
 
     @FXML
     private TextField txt_salary;
+    
+    private List<String> positionList = List.of("Backend Developer", "UI/UX Designer", "Frontend Developer");
 
     @FXML
     void btn_clear_click(ActionEvent event) {
@@ -76,5 +85,21 @@ public class SampleController {
     	String gender = rad_gender.getText();
     	
     	System.out.println("Name: " + name);
+    	System.out.println("salary: " + salary);
+    	System.out.println("position: " + position);
+    	System.out.println("Gender: " + gender);
+    	System.out.println("skillset: " + skillsets);
     }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		cbo_position.setItems(FXCollections.observableArrayList(positionList));
+		
+	}
+	@FXML
+    void lbl_login_click(MouseEvent event) throws IOException {
+		Main.changeScence("Login.fxml");
+    }
+
 }

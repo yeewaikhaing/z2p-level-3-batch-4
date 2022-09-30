@@ -1,4 +1,4 @@
-package com.mmit;
+package com.bms;
 	
 import java.io.IOException;
 
@@ -10,38 +10,30 @@ import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 
-public class Main extends Application {
+public class BMS extends Application {
 	
-	private static Stage original_stage;
+	static Stage original_stage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			//1
-			Parent root = FXMLLoader.load(this.getClass().getResource("Login.fxml"));
-			//2 add to scene
+			Parent root = FXMLLoader.load(getClass().getResource("view/Main.fxml"));
 			Scene scene = new Scene(root);
-			// 3 add scene obj to stage
+			
 			primaryStage.setScene(scene);
-			// call show() to display
-			primaryStage.show();
+			primaryStage.setTitle("Book Management System");
 			primaryStage.setResizable(false);
-			primaryStage.setTitle("Employee Registration");
+			primaryStage.show();
 			original_stage = primaryStage;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public static void changeScence(String inputFile) throws IOException {
-		Parent root = FXMLLoader.load(Main.class.getResource(inputFile));
-		
-		Scene new_scene = new Scene(root);
-		
+	public static void changeView(String inputfile) throws IOException {
+		Parent root = FXMLLoader.load(BMS.class.getResource(inputfile));
+		var scene = new Scene(root);
 		original_stage.hide();
-		
-		original_stage.setScene(new_scene);
-		
-		
+		original_stage.setScene(scene);
 		original_stage.show();
 	}
 	public static void main(String[] args) {
