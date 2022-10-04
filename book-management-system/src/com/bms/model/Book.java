@@ -5,9 +5,9 @@ public class Book {
 	private int id;
 	private String title;
 	private double price;
-	private Author author;
-	private Category category;
-	private User created_by;
+	private Author author = new Author();
+	private Category category = new Category();
+	private User created_by = new User();
 	public int getId() {
 		return id;
 	}
@@ -29,9 +29,19 @@ public class Book {
 	public Author getAuthor() {
 		return author;
 	}
+	public String getAuthorName() { // authorName
+		return author.getName();
+	}
+	public String getCategoryName() {
+		return category.getName();
+	}
+	public String getUserName() {
+		return created_by.getEmail();
+	}
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
+	
 	public Category getCategory() {
 		return category;
 	}

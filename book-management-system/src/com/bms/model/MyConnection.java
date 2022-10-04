@@ -1,12 +1,13 @@
 package com.bms.model;
 
+import java.io.ObjectInputStream.GetField;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyConnection {
 
-	private static final String DATABASE = "";
+	private static final String DATABASE = "batch_4";
 	private static final String USER_NAME = "root";
 	private static final String PASSWORD = "";
 	private static final String PORT = "3306";
@@ -17,7 +18,7 @@ public class MyConnection {
 		//jdbc:maridb://localhost:3306/
 		Connection conn = DriverManager.getConnection
 										(
-											"jdbc:maridb://" + 
+											"jdbc:mariadb://" + 
 											HOST_NAME + ":" + 
 											PORT + "/" + 
 											DATABASE, 
@@ -27,4 +28,9 @@ public class MyConnection {
 		return conn;
 										
 	}
+	
+//	public static void main(String[] args) throws SQLException {
+//		createConnection();
+//		System.out.println("Get connection..");
+//	}
 }
